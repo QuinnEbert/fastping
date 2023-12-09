@@ -1,0 +1,2 @@
+# fastping
+Synchresis FastPing
