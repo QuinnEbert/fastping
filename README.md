@@ -3,6 +3,9 @@ Program Code Copyright (C) 2023-2024, Synchresis Solutions, LLC
 
 www.synchresis.net
 
+## Looking for Binary Download?
+Head on over to the "Releases" on the right-hand side of this GitHub page
+
 ## Program Purpose
 The purpose of this program is to allow Windows users access to a single-executable CLI ping tool that runs in current conhost thread and can run bulk pings in intervals less than 1 second.  It **_DOES_** support flood ping (zero ms delay), even as a normal user.  This code **_DOES_** also work properly on macOS and Linux and PyInstaller should allow single portable binaries to be produced for both as well (that wasn't fully tested).  And, yes, fastping *does* work in many web-based RMM CLI sessions (tested specifically with Ninja RMM!)
 
@@ -27,7 +30,7 @@ For all your on-call Tier3 technology needs:
 + **_All services available at competitive, industry-centric rates_**
 + **_Contract services also available for round-the-clock Tier3 emergency event coverage_**
 
-## Build Windows binaries
+## Building your own Windows binaries
 By running, as admin:
 ```
 pip install PyInstaller
