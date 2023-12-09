@@ -1,5 +1,6 @@
 # fastping by Synchresis Solutions
 Program Code Copyright (C) 2023-2024, Synchresis Solutions, LLC
+
 www.synchresis.net
 
 ## Program Purpose
@@ -22,9 +23,9 @@ For all your on-call Tier3 technology needs:
 + Virtualization Support (VMware ESXi/vSphere, Hyper-V, Proxmox, Virtuozzo/OpenVZ, QEMU/libvirt/KVM)
 + SynchreCMS American-managed fully modular CMS Platform
 + Unbeatable Price on quality, American-managed Cloud PBX, Cloud eFax
-_All services provided by American engineers with 15+ years each hands-on SME experience_
-_All services available at competitive, industry-centric rates_
-_Contract services also available for round-the-clock Tier3 emergency event coverage_
++ **_All services provided by American engineers with 15+ years each hands-on SME experience_**
++ **_All services available at competitive, industry-centric rates_**
++ **_Contract services also available for round-the-clock Tier3 emergency event coverage_**
 
 ## Build Windows binaries
 By running, as admin:
