@@ -95,19 +95,22 @@ def do_one_ping(dest_addr, timeout, icmp_id):
         sent = my_socket.sendto(packet, (dest_addr, 1))
         packet = packet[sent:]
 
-    delay = timeout / 1000
-    start = time.time()
-    ready = select.select([my_socket], [], [], delay)
-    if ready[0] == []:
-        return None  # Timeout
+    delay = timeout / 1000  # Convert to seconds
+    start = time.perf_counter()  # Using high-resolution timer
+    while True:
+        elapsed = time.perf_counter() - start
+        if elapsed > delay:
+            return None  # Timeout
 
-    time_received = time.time()
-    rec_packet, addr = my_socket.recvfrom(1024)
-    icmp_header = rec_packet[20:28]
-    type, code, checksum, packet_id, sequence = struct.unpack('bbHHh', icmp_header)
+        ready = select.select([my_socket], [], [], delay - elapsed)
+        if ready[0]:
+            time_received = time.perf_counter()
+            rec_packet, addr = my_socket.recvfrom(1024)
+            icmp_header = rec_packet[20:28]
+            type, code, checksum, packet_id, sequence = struct.unpack('bbHHh', icmp_header)
 
-    if packet_id == icmp_id:
-        return time_received - start
+            if packet_id == icmp_id:
+                return time_received - start
 
     return None
 
